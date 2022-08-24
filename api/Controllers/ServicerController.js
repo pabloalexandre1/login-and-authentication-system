@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const nodeMailer = require("nodeMailer");
 const SMTPPool = require("nodemailer/lib/smtp-pool");
 const jwt = require('jsonwebtoken');
-const stripe = require('stripe')('sk_test_51LSSIPGHronIDZ9w2BJQmAR0KwP3DEMdPhAe8lmPhDApC8yGekQMHgBhGsXGAbYKs5y5jDiInbvQYbOuGtb3ywoq00GwdjmKBm');
+const stripe = require('stripe')('');
 
 class ServicerController {
     register = async (req, res) => {
@@ -126,7 +126,7 @@ class ServicerController {
             var result = await bcrypt.compare(password, user[0].password);
             if(result == true){
                 if(user[0].valid == 'yes'){
-                    var token = jwt.sign({name: user[0].name, email: user[0].email, role: 'servicer'}, 'umburana2011');
+                    var token = jwt.sign({name: user[0].name, email: user[0].email, role: 'servicer'}, '');
                     
                     res.json({
                         msg: "success",
@@ -168,7 +168,7 @@ class ServicerController {
             line_items: [
               {
                 // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                price: 'price_1LXYrRGHronIDZ9weBugR88g',
+                price: '',
                 quantity: 1,
               },
             ],
@@ -185,7 +185,7 @@ class ServicerController {
     }
 
     sucessPayment = async (req, res) => {
-        const endpointSecret = "whsec_3d47a0a34fc42629a61a83307a175efc3bbf6cfe5d6cda528898404d1789639e";
+        const endpointSecret = "";
 
         
 
