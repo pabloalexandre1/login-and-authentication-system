@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const nodeMailer = require("nodeMailer");
 const SMTPPool = require("nodemailer/lib/smtp-pool");
 const jwt = require('jsonwebtoken');
-const jwtsecret = 'umburana2011';
+const jwtsecret = '';
 
 class UserController {
     register = async (req, res) => {
@@ -67,8 +67,8 @@ class UserController {
                             port: 587,
                             secure: false,
                             auth: {
-                                user: "yagenda@yagenda.net",
-                                pass: "umburana.2011"
+                                user: "",
+                                pass: ""
                             }
                         });
 
