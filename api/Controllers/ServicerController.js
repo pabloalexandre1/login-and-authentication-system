@@ -67,8 +67,8 @@ class ServicerController {
                             port: 587,
                             secure: false,
                             auth: {
-                                user: "yagenda@yagenda.net",
-                                pass: "umburana.2011"
+                                user: "",
+                                pass: ""
                             }
                         });
 
